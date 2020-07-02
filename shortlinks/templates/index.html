@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>ShortUrls v{{ version }}</title>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+        <script src="{{ url_for('static', filename = '/js/script.js') }}"></script>
+    </head>
+    <body>
+        <div class="jumbotron">
+            <h1 class="display-4">Поебота от Умарыча</h1>
+            <p class="lead">Ультимативный генератор коротких URL-ов</p>
+            <hr class="my-4">
+            <p>Хз зачем он вообще нужен, просто проект для тренировки в аккуратности написания код</p>
+            <form>
+                <div class="form-row align-items-center">
+                  <div class="col-auto">
+                    <label class="sr-only" for="inlineFormInput">Ваша ссылка</label>
+                    <input type="text" class="form-control mb-2" id="inlineFormInput" placeholder="Длинная ссылка">
+                  </div>
+                  <div class="col-auto">
+                    <button type="button" class="btn btn-primary mb-2" onclick="get_short_url()">Совершить обрезание</button>
+                  </div>
+                </div>
+              </form>
+            <div class="alert alert-success" role="alert" id="success-div" style="display: none;">
+                Ваша ссылка готова: <a href="#" class="alert-link" id='link'></a>. Кликай или умр..скопируй.
+            </div>
+            <div class="alert alert-danger" role="alert" id="error-div" style="display: none;">
+                Непредвиденная ошибка на сервере
+            </div>
+        </div>
+    </body>
+</html>
